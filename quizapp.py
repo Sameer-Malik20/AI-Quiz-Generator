@@ -11,7 +11,7 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
-client = genai.Client(api_key=os.getenv("GENAI_API_KEY"))
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 @app.route('/generate-quiz', methods=['POST'])
 def generate_quiz():
