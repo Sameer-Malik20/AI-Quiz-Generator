@@ -4,13 +4,14 @@ from google import genai
 from dotenv import load_dotenv
 import re
 import json
+import os
 
 load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
 
-client = genai.Client(api_key="your_api_key")
+client = genai.Client(api_key=os.getenv("GENAI_API_KEY"))
 
 @app.route('/generate-quiz', methods=['POST'])
 def generate_quiz():
